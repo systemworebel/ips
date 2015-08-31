@@ -7,17 +7,25 @@
 	<link rel="shortcut icon" href="img/favicon.ico">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="css/estilos.css">
+
 </head>
 <body>
 	   <section id="contenido">
 	   	<div id="logo"><img src="img/logo.png" alt="Imagen Empresa"></div>
 	   	<div id="login">
-	   		<form action="" method="POST">
+	   		<?php
+	   		if(isset($_GET["error"])){
+	   			if($_GET["error"]=="si"){
+	   			echo "<span class='danger'>Datos incorrectos</span>";
+	   			}
+	   		} 
+	   		?>	   		
+	   		<form action="" method="POST" id="inicio">
 	   			<input name="txtUser"type="text" placeholder="Usuario" required class="cambio">
 	   			<input name="txtPass" type="password" placeholder="Contraseña" required class="cambio">
 	   			<input type="submit" value="Iniciar Sesion" class="btn btnazul cambio">	
 	   		</form>
-	   		<br>
+	   		<br>	   		
 	   		<div><a id="linko" class="cambio">Olvide Contraseña</a></div>
 	   		<article id="olvide" class="cambio">
 	   			<form action="" method="POST">
@@ -30,9 +38,11 @@
 	   <script>
 	   		var a = document.getElementById('olvide');
 	   		var b = document.getElementById('linko');
+	   		var c = document.getElementById('inicio');
 	   		b.addEventListener('click',aparece);
 	   		function aparece () {
-	   			olvide.style.display="block";
+	   			a.style.display="block";
+	   			c.style.display="none";
 	   		}
 	   </script>
 </body>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=si, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="css/estilos.css">
+	<title>Panel</title>
+</head>
+<body>
+	<nav id="superior">
+		
+	</nav>
+	<section id="sideright" class="cambio">
+		<div class="derecha">
+			<ul id="menup" class="cambio">
+				<li><span class="glyphicon glyphicon-search" aria-hidden="true"></span></li>
+				<li><span class="glyphicon glyphicon-search" aria-hidden="true"></span></li>
+				<li><span class="glyphicon glyphicon-search" aria-hidden="true"></span></li>
+				<li><span class="glyphicon glyphicon-search" aria-hidden="true"></span></li>
+			</ul>
+		</div>
+		
+		<ul id="menug" class="cambio">
+			<li><span><button class="btnmenu"><span class="glyphicon glyphicon-search espa" aria-hidden="true"></span>Clientes</button></span></li>
+			<li><span><button class="btnmenu">menu</button></span></li>
+			<li><span><button class="btnmenu">menu</button></span></li>
+			<li><span><button class="btnmenu">menu</button></span></li>
+		</ul>
+	</section>
+	<section id="contenido">
+		<section id="principal">
+			
+		</section>
+	</section>
+	<script>
+	   		var a = document.getElementById('sideright');
+	   		var b = document.getElementById("menup");
+	   		var c = document.getElementById("menug");
+	   		a.addEventListener('mouseover',aparece);
+	   		a.addEventListener('mouseout',desaparece)
+	   		function aparece () {
+	   			a.style.marginLeft="0px";
+	   			b.style.display="none";
+	   			c.style.display="block"
+	   		}
+
+	   		function desaparece(){
+	   			a.style.marginLeft="-200px";
+	   			b.style.display="block";
+	   			c.style.display="none"
+	   		}
+	</script>
+</body>
+</html>

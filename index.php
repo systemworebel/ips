@@ -7,6 +7,7 @@
 	<link rel="shortcut icon" href="img/favicon.ico">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="css/estilos.css">
+
 </head>
 <body>
 	   <section id="contenido">
@@ -17,13 +18,13 @@
 	   			$dato=$_GET["dato"];
 	   			echo "<span>".$dato."</span>";
 	   		}
-	   		?>
-	   		<form action="auth/verSesion.php" method="POST">
+	   		?> 
+	   		<form action="auth/verSesion.php" method="POST" id="inicio">
 	   			<input name="txtUser"type="text" placeholder="Usuario" required class="cambio">
 	   			<input name="txtPass" type="password" placeholder="Contraseña" required class="cambio">
 	   			<input type="submit" value="Iniciar Sesion" class="btn btnazul cambio">	
-	   		</form>
-	   		<br>
+	   		</form> 
+	   		<br>	   		
 	   		<div><a id="linko" class="cambio">Olvide Contraseña</a></div>
 	   		<article id="olvide" class="cambio">
 	   			<form action="" method="POST">
@@ -36,9 +37,11 @@
 	   <script>
 	   		var a = document.getElementById('olvide');
 	   		var b = document.getElementById('linko');
+	   		var c = document.getElementById('inicio');
 	   		b.addEventListener('click',aparece);
 	   		function aparece () {
-	   			olvide.style.display="block";
+	   			a.style.display="block";
+	   			c.style.display="none";
 	   		}
 	   </script>
 </body>

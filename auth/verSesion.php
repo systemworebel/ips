@@ -1,5 +1,5 @@
 <?php
-$usuario=$_POST['txtUser'];
-$pass=$_POST['txtPass'];
+$dato="No pudo iniciar sesion";
+header("Location: ../index.php?dato=".$dato);
 
 ?>

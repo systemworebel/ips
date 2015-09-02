@@ -37,7 +37,7 @@ section#sideright
 	
 section#contenido
 	padding-top 50px
-	margin-left 250px
+	margin-left 50px
 	
 section#principal
 	padding 15px
@@ -81,6 +81,7 @@ section#principal
 	border-top 1px solid #e7e7e7	
 	
 #menug 
+	display none
 	text-align left
 	li
 		display block
@@ -104,67 +105,73 @@ section#principal
 	
 .espa
 	margin-right 10px
-			
-.busca
-	text-align center
-	input[type="search"],button
-		position absolute
-	input[type="search"]
-		left 25px
-		top 10px
-	button 
-		top 10px
-		left 225px
-		padding 6px 12px
-		line-height 1.42857143
 		
-.input-group 
-	position relative
-	display table
-	border-collapse separate
-	.form-control:first-child
-		border-top-right-radius 0
-		border-bottom-right-radius 0
-	.form-control
-		display table-cell
-		position relative
-		z-index 2
-		float left
-		width 100%
-		margin-bottom 0
-		width 100%
-		height 34px
-		padding 6px 12px
-		font-size 14px
-		line-height 1.42857143
+.menu-derecha
+	text-align right
+	.item
+		cursor pointer
 		color #555
-		background-color #fff
-		background-image none
-		border 1px solid #ccc
-		border-radius 4px
-		box-shadow inset 0 1px 1px rgba(0,0,0,0.075)
-		transition border-color ease-in-out .15s,box-shadow ease-in-out .15s
+		display inline-block
+		vertical-align middle
+		height 30px
+		padding 10px 15px
+		font-size 24px
+		margin-right 5px
+		&:hover
+			background #eee
+	.item:last-child
+		margin-right 20px
 		
-.fa
-	display inline-block
-	font normal normal normal 14px/1 FontAwesome
-	font-size inherit
-	text-rendering auto
-	-webkit-font-smoothing antialiased
-	-moz-osx-font-smoothing grayscale
+.i-conf:hover
+	color #007CC3
+			
+.i-envelo:hover
+	color #EF4E17	
+		
+.i-noti:hover
+	color #DB814D
 	
-.btn-default {
-	text-shadow 0 1px 0 #fff
-	background-image linear-gradient(to bottom, #fff 0%, #e0e0e0 100%)
-	border-color #dbdbdb
-	border-color #ccc
+.girar:hover
+	transform rotate(360deg)
+			
+.vibra
+	transform rotate(0deg)
 	&:hover
-		background-color:#e0e0e0
-		background-position 0 -15px
-	&:active
-		border-color #dbdbdb
-		box-shadow inset 0 3px 5px rgba(0, 0, 0, 0.125)
+		transform rotate(10deg)
+		transform rotate(-10deg)
 	
+
+.submenu
+	display none
+	font-family 'Open Sans'
+	border 1px solid #eee
+	position absolute
+	top 36px
+	right -15px
+	background #f8f8f8
+	z-index 1003
+	border-radius 0px 0px 4px 4px
+	text-align left
+	min-width 200px
+	li
+		display block
+		margin 0 auto
+		font-size 12px
+		vertical-align middle
+		position relative
+		border-bottom 1px solid #eee		
+		padding 12px 5px
+		color #555
+		&:hover
+			border-bottom 2px solid #007CC3
+			font-weight bold
+			background #eee
+			color #007CC3
+		span
+			font-size 16px
+			vertical-align middle
+		
+
 @font-face {
   font-family: 'Glyphicons Halflings';
 
@@ -185,12 +192,38 @@ section#principal
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.glyphicon-signal:before {
+  content: "\e018";
+}
+.glyphicon-envelope:before {
+  content: "\2709";
+}
+.glyphicon-off:before {
+  content: "\e017";
+}
+.glyphicon-bell:before {
+  content: "\e123";
+}
+.glyphicon-cog:before {
+  content: "\e019";
+}
+
 .glyphicon-search:before {
   content: "\e003";
 }
 
 .glyphicon-user:before {
   content: "\e008";
+}
+
+.glyphicon-book:before {
+  content: "\e043";
+}
+.glyphicon-file:before {
+  content: "\e022";
+}
+.glyphicon-bookmark:before {
+  content: "\e044";
 }
 
 .btn
@@ -227,6 +260,18 @@ section#principal
 	border-right 5px solid #007CC3
 	color #007CC3
 	
+.btn-agenda:hover,.btn-agenda:active
+	border-right 5px solid #97A3A0
+	color #97A3A0
+	
+.btn-afila:hover,.btn-afila:active
+	border-right 5px solid #EF4E17
+	color #EF4E17
+	
+.btn-venta:hover,.btn-venta:active
+	border-right 5px solid #DB814D
+	color #DB814D
+	
 input[type="search"]
 	box-sizing content-box
 	-webkit-appearance textfield
@@ -235,9 +280,79 @@ input[type="search"]
 	background-color #fff
 	background-image none
 	border 1px solid #ccc
-	border-radius 4px
-	box-shadow inset 0 1px 1px rgba(0,0,0,0.075)
+	box-shadow inset 0 1px 1px rgba(0,0,0,.075)
 	transition border-color ease-in-out .15s, box-shadow ease-in-out .15s
 	&:focus
 		border-color #66afe9
 		outline 0
+		box-shadow inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+		
+.busca
+	position relative
+	margin 0 auto
+	width 220px
+	margin-top 12px
+	.buscan,.btn-busca
+		position absolute
+	.buscan
+		border-radius 4px 0px 0px 4px
+		height 18px
+		width 161px
+	.btn-busca
+		height 32px
+		width 40px
+		top 0
+		right 0
+		span
+			vertical-align middle 
+		
+.buscador
+	height 60px !important
+		
+.fade
+	opacity 1 
+	transition all 0.5s ease-in 
+	&:hover
+		opacity 0.7
+		transition all 0.5s ease-out
+		
+.btn-default
+	color #fff
+	border-radius 0px 4px 4px 0px
+	background #EF4E17
+	// background-image linear-gradient(to bottom, #5cb85c 0%, #419641 100%)
+	background-repeat repeat-x
+	border-color #dbdbdb
+	border-color #ccc
+	&:hover
+		background-color #f78c6f
+		background-position 0 -15px
+	&:active
+		background-color #f78c6f
+		border-color #dbdbdb
+		
+.fc-four-rows .fc-row  {
+	height: 25%;
+}
+
+.fc-five-rows .fc-row  {
+	height: 20%;
+}
+
+.fc-six-rows .fc-row {
+	height: 16.66%;
+	height: -moz-calc(100%/6);
+	height: -webkit-calc(100%/6);
+	height: calc(100%/6);
+}
+
+.fc-calendar .fc-row > div,
+.fc-calendar .fc-head > div {
+	float: left;
+	height: 100%;
+	width:  14.28%; /* 100% / 7 */
+	width: -moz-calc(100%/7);
+	width: -webkit-calc(100%/7);
+	width: calc(100%/7);
+	position: relative;
+}
